@@ -1,0 +1,10 @@
+{
+  "description": "ACORVOYAGE helps Francophone African students navigate their study abroad applications, offering personalized guidance and eligibility assessments for various countries.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
