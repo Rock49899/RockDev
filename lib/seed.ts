@@ -18,12 +18,12 @@ const metrics: Omit<Metric, "id">[] = [
 ];
 
 const skills: Omit<SkillGroup, "id">[] = [
-  { variant: "dev", title: "FRONTEND", items: "React · Vue.js · TypeScript · JavaScript (ES6+) · Tailwind CSS · HTML5 / CSS3", sort: 1 },
+  { variant: "dev", title: "FRONTEND", items: "React · Vue.js · TypeScript · JavaScript (ES6+) · Tailwind CSS · HTML5 · CSS3", sort: 1 },
   { variant: "dev", title: "BACKEND", items: "Laravel · PHP · Node.js · NestJS · API REST · Architecture MVC", sort: 2 },
   { variant: "dev", title: "DONNÉES", items: "MySQL · PostgreSQL · SQLite · MongoDB · SQL", sort: 3 },
   { variant: "dev", title: "FUNNELS & LANDING PAGES", items: "systeme.io · Funnels de vente · Landing pages", sort: 4 },
   { variant: "dev", title: "AUTOMATISATION", items: "Make · Scénarios d'automatisation · API REST", sort: 5 },
-  { variant: "dev", title: "OUTILS & MÉTHODES", items: "Git · GitHub · GitLab · Agile / Scrum · Gestion de projet", sort: 6 },
+  { variant: "dev", title: "OUTILS & MÉTHODES", items: "Git · GitHub · GitLab · Docker · Agile / Scrum · Gestion de projet", sort: 6 },
   { variant: "amoa", title: "ANALYSE & PILOTAGE", items: "Analyse de données · Suivi-évaluation · Conception d'indicateurs · Rédaction de rapports · Planification stratégique", sort: 1 },
   { variant: "amoa", title: "FINANCE & CRÉDIT", items: "Gestion financière · Analyse de dossiers de crédit · Économie monétaire et bancaire · Comptabilité", sort: 2 },
   { variant: "amoa", title: "DONNÉES & OUTILS", items: "SQL · PostgreSQL · MySQL · Excel · SPSS · Git", sort: 3 },
@@ -36,7 +36,7 @@ const softSkills: Omit<SoftSkill, "id">[] = [
   { variant: "dev", title: "Esprit d'analyse", text: "Je décompose un besoin métier complexe en fonctionnalités claires avant d'écrire la première ligne.", sort: 2 },
   { variant: "dev", title: "Méthode agile", text: "Travail par itérations (Agile / Scrum), avec des livrables réguliers et visibles.", sort: 3 },
   { variant: "dev", title: "Communication", text: "Rédaction de rapports et de documents clairs, lisibles par les équipes comme par les non-techniques.", sort: 4 },
-  { variant: "dev", title: "Autonomie", text: "Formation continue : React Native, modélisation de bases de données, SQL, HTML5 / CSS3.", sort: 5 },
+  { variant: "dev", title: "Autonomie", text: "Formation continue : React Native, modélisation de bases de données, SQL, HTML5 · CSS3.", sort: 5 },
   { variant: "amoa", title: "Rigueur analytique", text: "Analyse de données, suivi-évaluation et conception d'indicateurs économiques.", sort: 1 },
   { variant: "amoa", title: "Rédaction", text: "Rapports, propositions stratégiques et documents de cadrage structurés.", sort: 2 },
   { variant: "amoa", title: "Pilotage de projet", text: "Cadrage du besoin, coordination de l'équipe et suivi de la livraison sur WALAB.", sort: 3 },
