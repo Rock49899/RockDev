@@ -4,6 +4,7 @@ import { basePath, projectHref, stackItems } from "@/lib/view";
 import type { Project, SiteView } from "@/lib/types";
 import Carousel from "./Carousel";
 import { Icon } from "./Icon";
+import ScrollEffects from "./ScrollEffects";
 import { TechLogo } from "./TechLogo";
 import type { NavItem } from "./Shell";
 import { Lines, Rich } from "./text";
@@ -107,15 +108,12 @@ export default function Sections({ view }: { view: SiteView }) {
   ].filter((column) => column.items.length > 0);
   const applications = projects.filter((p) => p.kind !== "funnel");
   const funnels = projects.filter((p) => p.kind === "funnel");
-  // Toutes les technologies citées dans l'expertise, sans doublon : alimente la bande défilante.
-  const technologies = [
-    ...new Map(skills.flatMap((g) => stackItems(g.items)).map((t) => [t.toLowerCase(), t])).values(),
-  ];
   let n = 0;
   const tag = (label: string) => `${pad(++n)} / ${label}`;
 
   return (
     <>
+      <ScrollEffects />
       <section id="home" className="hero">
         {profile.available && (
           <div className="availability">
@@ -135,16 +133,6 @@ export default function Sections({ view }: { view: SiteView }) {
             <p className="intro">
               <Rich text={profile.intro} />
             </p>
-            {profile.hero_stack && (
-              <ul className="chips hero-chips" aria-label="Technologies principales">
-                {stackItems(profile.hero_stack).map((tech) => (
-                  <li key={tech}>
-                    <TechLogo name={tech} />
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            )}
             <div className="actions">
               <a className="primary" href="#work">
                 Voir mes projets <Icon name="arrow" />
@@ -186,23 +174,6 @@ export default function Sections({ view }: { view: SiteView }) {
           <i /> SCROLL TO EXPLORE
         </a>
       </section>
-
-      {technologies.length > 0 && (
-        <div className="stack-band" role="region" aria-label="Technologies maîtrisées">
-          <div className="stack-track">
-            {[0, 1].map((copy) => (
-              <ul key={copy} aria-hidden={copy === 1}>
-                {technologies.map((tech) => (
-                  <li key={tech}>
-                    <TechLogo name={tech} />
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            ))}
-          </div>
-        </div>
-      )}
 
       <section id="about" className="about section-pad">
         <div className="section-tag">{tag("À PROPOS")}</div>

@@ -68,8 +68,6 @@ footer a:hover{color:var(--cyan)}
 /* Pastilles de technologies */
 .chips{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0;padding:0}
 .chips li{padding:5px 10px;border:1px solid #232a4a;background:rgba(255,255,255,.025);color:#8d96ad;font-size:9px;letter-spacing:1.3px;text-transform:uppercase}
-.hero-chips{margin-top:28px}
-.hero-chips li{padding:7px 13px;font-size:10px;color:var(--text);border-color:color-mix(in srgb,var(--blue) 45%,var(--line))}
 
 /* Cartes projet : lien étiré + accès GitHub */
 article.project{position:relative;cursor:pointer}
@@ -193,20 +191,8 @@ a.round-arrow:hover,a.round-arrow:focus-visible{color:var(--cyan);border-color:v
 
 
 /* ───── Stack bien visible : bande défilante, pastilles plus lisibles ───── */
-.stack-band{overflow:hidden;padding:14px 0;border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(2,4,10,.85),rgba(14,10,40,.55),rgba(2,4,10,.85))}
-.stack-track{display:flex;width:max-content;animation:stack-scroll 48s linear infinite}
-.stack-band:hover .stack-track{animation-play-state:paused}
-.stack-track ul{display:flex;flex:none;margin:0;padding:0;list-style:none}
-.stack-track li{display:flex;align-items:center;white-space:nowrap;font:600 21px/1 var(--font-display);letter-spacing:1.5px;text-transform:uppercase;color:#b9c1da}
-.stack-track li:after{content:"";width:5px;height:5px;margin:0 22px;transform:rotate(45deg);background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
-@keyframes stack-scroll{to{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){
-  .stack-track{animation:none;width:auto;flex-wrap:wrap;padding:0 clamp(24px,5vw,90px);row-gap:14px}
-  .stack-track ul[aria-hidden="true"]{display:none}
-}
 
 .chips li{font-size:11px;padding:6px 12px;color:#c4cbe0;border-color:color-mix(in srgb,var(--blue) 38%,var(--line))}
-.hero-chips li{font-size:12px;padding:8px 15px;color:var(--text);border-color:color-mix(in srgb,var(--blue) 60%,var(--line));background:color-mix(in srgb,var(--blue) 10%,transparent)}
 .project-copy .chips li{color:var(--text)}
 .detail-meta .chips li{color:var(--text)}
 .orbit p{display:none}
@@ -218,10 +204,35 @@ a.round-arrow:hover,a.round-arrow:focus-visible{color:var(--cyan);border-color:v
 .orbit:before,.orbit:after{display:none}
 .orbit-core{position:relative;left:auto;top:auto;transform:none;grid-column:1/-1;margin:0 auto 26px}
 .orbit article{position:relative!important;inset:auto!important;width:auto!important;padding:22px}
-@media(max-width:720px){.stack-track li{font-size:18px}.stack-track li:after{margin:0 16px}}
 
 
 
-.chips li,.stack-track li{display:inline-flex;align-items:center;gap:.55em}
-.chips li .tech-logo,.stack-track li .tech-logo{flex:none;width:1.15em;height:1.15em}
-.stack-track li .tech-logo{width:1em;height:1em}
+
+/* Logos des technologies */
+.chips li{display:inline-flex;align-items:center;gap:.6em;transition:transform .25s,border-color .25s}
+.chips li .tech-logo{flex:none;width:1.25em;height:1.25em;transition:transform .3s}
+.chips li:hover{transform:translateY(-3px);border-color:var(--cyan)}
+.chips li:hover .tech-logo{transform:scale(1.2) rotate(-6deg)}
+
+/* Apparition au défilement et progression de lecture */
+[data-reveal]{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*90ms)}
+[data-reveal].in{opacity:1;transform:none}
+.scroll-progress{position:fixed;z-index:200;top:0;left:0;right:0;height:3px;transform-origin:0 50%;transform:scaleX(var(--scroll,0));background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));pointer-events:none}
+
+/* Animations du hero et de l'expertise */
+.hero-copy>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy>:nth-child(2){animation-delay:.08s}
+.hero-copy>:nth-child(3){animation-delay:.16s}
+.hero-copy>:nth-child(4){animation-delay:.24s}
+.portrait-frame{animation:float 8s ease-in-out infinite}
+.xp{animation:float 6s ease-in-out -2s infinite}
+.scanline{animation:scan 5s ease-in-out infinite}
+.orbit:before{animation:spin 90s linear infinite}
+.orbit:after{animation:spin 140s linear infinite reverse}
+.orbit-core{animation:pulse 4s ease-in-out infinite}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}}
+@keyframes float{50%{transform:translateY(-10px)}}
+@keyframes scan{0%,100%{top:8%}50%{top:92%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{box-shadow:0 0 90px rgba(86,61,255,.45)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}[data-reveal]{opacity:1;transform:none}}

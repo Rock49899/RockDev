@@ -52,7 +52,6 @@ export const VARIANT_GROUPS: FieldGroup[] = [
     fields: [
       { key: "kicker", label: "Sous-titre au-dessus du nom", kind: "text" },
       { key: "intro", label: "Phrase d'introduction", kind: "textarea", hint: GRAS },
-      { key: "hero_stack", label: "Technologies / mots-clés sous l'intro", kind: "text", hint: "Séparés par « · ». Laisser vide pour masquer." },
       { key: "available", label: "Afficher le badge de disponibilité", kind: "bool" },
       { key: "availability_text", label: "Texte du badge", kind: "text" },
       { key: "experience_value", label: "Chiffre sur la photo", kind: "text", hint: "Ex. 4 ou 6+" },
