@@ -103,9 +103,6 @@ function ProjectCard({ project, index, view }: { project: Project; index: number
             <Icon name="github" />
           </a>
         )}
-        <span className="round-arrow go" aria-hidden="true">
-          <Icon name="arrow" />
-        </span>
       </div>
     </article>
   );
