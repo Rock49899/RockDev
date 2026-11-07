@@ -9,7 +9,7 @@ import type { Experience, Metric, Project, SiteData, SkillGroup, SoftSkill } fro
 const metrics: Omit<Metric, "id">[] = [
   { variant: "dev", value: "4", label: "projets full-stack", sort: 1 },
   { variant: "dev", value: "3", label: "frameworks au quotidien", sort: 2 },
-  { variant: "dev", value: "1", label: "projet piloté de bout en bout", sort: 3 },
+  { variant: "dev", value: "4", label: "bases de données maîtrisées", sort: 3 },
   { variant: "dev", value: "∞", label: "curiosité", sort: 4 },
   { variant: "amoa", value: "4", label: "projets full-stack", sort: 1 },
   { variant: "amoa", value: "6+", label: "années d'expérience", sort: 2 },
@@ -32,16 +32,14 @@ const skills: Omit<SkillGroup, "id">[] = [
 ];
 
 const softSkills: Omit<SoftSkill, "id">[] = [
-  { variant: "dev", title: "Pilotage de projet", text: "Cadrage du besoin, coordination de l'équipe et suivi de la livraison sur la plateforme WALAB.", sort: 1 },
-  { variant: "dev", title: "Esprit d'analyse", text: "Je décompose un besoin métier complexe en fonctionnalités claires avant d'écrire la première ligne.", sort: 2 },
-  { variant: "dev", title: "Méthode agile", text: "Travail par itérations (Agile / Scrum), avec des livrables réguliers et visibles.", sort: 3 },
-  { variant: "dev", title: "Communication", text: "Rédaction de rapports et de documents clairs, lisibles par les équipes comme par les non-techniques.", sort: 4 },
-  { variant: "dev", title: "Autonomie", text: "Formation continue : React Native, modélisation de bases de données, SQL, HTML5 · CSS3.", sort: 5 },
+  { variant: "dev", title: "Esprit d'analyse", text: "Je décompose un besoin métier complexe en fonctionnalités claires avant d'écrire la première ligne.", sort: 1 },
+  { variant: "dev", title: "Méthode agile", text: "Travail par itérations (Agile / Scrum), avec des livrables réguliers et visibles.", sort: 2 },
+  { variant: "dev", title: "Communication", text: "Rédaction de rapports et de documents clairs, lisibles par les équipes comme par les non-techniques.", sort: 3 },
+  { variant: "dev", title: "Autonomie", text: "Formation continue : React Native, modélisation de bases de données, SQL, HTML5 / CSS3.", sort: 4 },
   { variant: "amoa", title: "Rigueur analytique", text: "Analyse de données, suivi-évaluation et conception d'indicateurs économiques.", sort: 1 },
   { variant: "amoa", title: "Rédaction", text: "Rapports, propositions stratégiques et documents de cadrage structurés.", sort: 2 },
-  { variant: "amoa", title: "Pilotage de projet", text: "Cadrage du besoin, coordination de l'équipe et suivi de la livraison sur WALAB.", sort: 3 },
-  { variant: "amoa", title: "Compréhension métier", text: "Gestion du crédit, analyse de dossiers et finances publiques locales.", sort: 4 },
-  { variant: "amoa", title: "Pont métier / technique", text: "Je traduis un besoin métier en spécifications que les développeurs peuvent construire.", sort: 5 },
+  { variant: "amoa", title: "Compréhension métier", text: "Gestion du crédit, analyse de dossiers et finances publiques locales.", sort: 3 },
+  { variant: "amoa", title: "Pont métier / technique", text: "Je traduis un besoin métier en spécifications que les développeurs peuvent construire.", sort: 4 },
 ];
 
 const projects: Omit<Project, "id">[] = [
@@ -79,7 +77,7 @@ const projects: Omit<Project, "id">[] = [
     link_url: "",
     sort: 2,
     description: "Imaginez : vous devez faire des analyses et vous n'avez pas le temps d'aller au laboratoire. Vous commandez sur WALAB, un agent vient chez vous, vous le voyez arriver sur la carte, puis vous suivez votre prélèvement jusqu'à la réception des résultats, en ligne et de façon sécurisée. Derrière, la plateforme répartit l'argent entre les laboratoires, les agents préleveurs et WALAB.\n\nJ'ai dirigé l'équipe de quatre développeurs. Je suis parti de la vision de l'entreprise pour écrire le cahier des charges, j'ai découpé le travail en tâches, tenu les points quotidiens, fait le suivi d'avancement avec le client, et organisé les tests avant chaque livraison. Côté technique, j'ai développé une partie du back-end et du front-end, et relu le travail des autres avant qu'il parte en production.\n\nC'est le projet où j'ai appris à tenir ensemble un client, une équipe et une date de livraison. Il est en production pour de vrais utilisateurs.",
-    highlights: "Équipe de quatre développeurs dirigée, du cahier des charges à la livraison\nSuivi de l'agent sur la carte et résultats en ligne sécurisés\nRépartition des paiements entre laboratoires, agents préleveurs et WALAB\nEn production pour de vrais utilisateurs",
+    highlights: "Suivi de l'agent sur la carte et résultats en ligne sécurisés\nRépartition des paiements entre laboratoires, agents préleveurs et WALAB\nEn production pour de vrais utilisateurs",
   },
   {
     kind: "application",
@@ -120,7 +118,7 @@ const projects: Omit<Project, "id">[] = [
 ];
 
 const experiences: Omit<Experience, "id">[] = [
-  { kind: "experience", period: "Avr. 2026 — Sept. 2026", title: "Développeur full-stack et chef de projet", org: "WALAB, plateforme de service de laboratoire à domicile", description: "Cadrage du besoin, coordination de l'équipe et suivi de la livraison. Développement de la plateforme (Laravel, React, MySQL).", show_dev: true, show_amoa: true, sort: 1 },
+  { kind: "experience", period: "Avr. 2026 — Sept. 2026", title: "Développeur full-stack et chef de projet", org: "WALAB, plateforme de service de laboratoire à domicile", description: "", show_dev: true, show_amoa: true, sort: 1 },
   { kind: "experience", period: "Janv. 2026 — Avr. 2026", title: "Stage : développeur full-stack", org: "La Pieuvre Technologique", description: "Développement full-stack d'applications web (Laravel, Vue.js, MySQL).", show_dev: true, show_amoa: true, sort: 2 },
   { kind: "experience", period: "Janv. 2023 — Août 2024", title: "Responsable analyste suivi-évaluation", org: "Cabinet Smart Solutions Bénin", description: "Conception et mise en œuvre de systèmes de suivi-évaluation. Analyse de données, rédaction de rapports, conception d'indicateurs économiques et planification stratégique.", show_dev: false, show_amoa: true, sort: 3 },
   { kind: "experience", period: "Févr. 2021 — Avr. 2022", title: "Assistant suivi des opérations de crédit", org: "Kotchami Okoumansou", description: "Élaboration de plans de gestion des crédits, collecte des fonds, analyse des dossiers de crédit.", show_dev: false, show_amoa: true, sort: 4 },
@@ -168,7 +166,7 @@ export const seed: SiteData = {
       about_p1:
         "Développeur full-stack, je construis des **applications web de gestion** : paiement, commandes, stocks, suivi budgétaire. Laravel et Node.js côté serveur, Vue.js et React côté interface.",
       about_p2:
-        "J'ai piloté de bout en bout la plateforme WALAB : cadrage du besoin, coordination de l'équipe, développement et suivi de la livraison. Je livre un **code structuré (MVC, API REST)** et je tiens mes clients informés de l'avancement.",
+        "Je livre un **code structuré (MVC, API REST)** et je reste en contact avec mes clients tout au long du projet.",
       about_cta: "Voir ma stack",
       work_title: "DES PLATEFORMES",
       work_accent: "CONÇUES POUR SERVIR.",
@@ -208,7 +206,7 @@ export const seed: SiteData = {
       about_p1:
         "Économiste de formation, j'ai commencé par le suivi-évaluation, l'analyse de données et la conception d'indicateurs. Aujourd'hui, je **traduis ces besoins métier en applications web** : gestion financière, paiement, commandes et stocks.",
       about_p2:
-        "Chef de projet et développeur full-stack sur la plateforme WALAB, je pilote de bout en bout, du cadrage à la livraison. Je prépare une licence MIAGE pour devenir **consultant AMOA** dans la banque et la fintech.",
+        "Je prépare une licence MIAGE pour devenir **consultant AMOA** dans la banque et la fintech.",
       about_cta: "Découvrir mon approche",
       work_title: "DES OUTILS QUI",
       work_accent: "SERVENT LE MÉTIER.",
