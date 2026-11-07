@@ -4,6 +4,7 @@ import { basePath, projectHref, stackItems } from "@/lib/view";
 import type { Project, SiteView } from "@/lib/types";
 import Carousel from "./Carousel";
 import { Icon } from "./Icon";
+import { TechLogo } from "./TechLogo";
 import type { NavItem } from "./Shell";
 import { Lines, Rich } from "./text";
 
@@ -69,7 +70,10 @@ function ProjectCard({ project, index, view }: { project: Project; index: number
         <p>{project.description}</p>
         <ul className="chips" aria-label="Technologies">
           {stackItems(project.stack).map((tech) => (
-            <li key={tech}>{tech}</li>
+            <li key={tech}>
+              <TechLogo name={tech} />
+              {tech}
+            </li>
           ))}
         </ul>
       </div>
@@ -104,7 +108,9 @@ export default function Sections({ view }: { view: SiteView }) {
   const applications = projects.filter((p) => p.kind !== "funnel");
   const funnels = projects.filter((p) => p.kind === "funnel");
   // Toutes les technologies citées dans l'expertise, sans doublon : alimente la bande défilante.
-  const technologies = [...new Map(skills.flatMap((g) => stackItems(g.items)).map((t) => [t.toLowerCase(), t])).values()];
+  const technologies = [
+    ...new Map(skills.flatMap((g) => stackItems(g.items)).map((t) => [t.toLowerCase(), t])).values(),
+  ];
   let n = 0;
   const tag = (label: string) => `${pad(++n)} / ${label}`;
 
@@ -132,7 +138,10 @@ export default function Sections({ view }: { view: SiteView }) {
             {profile.hero_stack && (
               <ul className="chips hero-chips" aria-label="Technologies principales">
                 {stackItems(profile.hero_stack).map((tech) => (
-                  <li key={tech}>{tech}</li>
+                  <li key={tech}>
+                    <TechLogo name={tech} />
+                    {tech}
+                  </li>
                 ))}
               </ul>
             )}
@@ -184,7 +193,10 @@ export default function Sections({ view }: { view: SiteView }) {
             {[0, 1].map((copy) => (
               <ul key={copy} aria-hidden={copy === 1}>
                 {technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
+                  <li key={tech}>
+                    <TechLogo name={tech} />
+                    {tech}
+                  </li>
                 ))}
               </ul>
             ))}
@@ -284,7 +296,10 @@ export default function Sections({ view }: { view: SiteView }) {
               <h3>{group.title}</h3>
               <ul className="chips" aria-label={group.title}>
                 {stackItems(group.items).map((tech) => (
-                  <li key={tech}>{tech}</li>
+                  <li key={tech}>
+                    <TechLogo name={tech} />
+                    {tech}
+                  </li>
                 ))}
               </ul>
             </article>
@@ -384,11 +399,7 @@ export function SiteFooter({ view }: { view: SiteView }) {
           RETOUR EN HAUT ↑
         </Link>
         {variant === "dev" ? (
-          <Link
-            className="alt-version"
-            href="/amoa"
-            aria-label="Autre version du portfolio"
-          >
+          <Link className="alt-version" href="/amoa" aria-label="Autre version du portfolio">
             ·
           </Link>
         ) : (

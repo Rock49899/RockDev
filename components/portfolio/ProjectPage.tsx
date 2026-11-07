@@ -4,6 +4,7 @@ import { getSiteData } from "@/lib/content";
 import { lines, projectHref, selectVariant, stackItems } from "@/lib/view";
 import type { Variant } from "@/lib/types";
 import { Icon } from "./Icon";
+import { TechLogo } from "./TechLogo";
 import { ProjectArt, navFor } from "./Sections";
 import Shell from "./Shell";
 
@@ -81,7 +82,10 @@ export default async function ProjectPage({
                 <dd>
                   <ul className="chips">
                     {stackItems(project.stack).map((tech) => (
-                      <li key={tech}>{tech}</li>
+                      <li key={tech}>
+                        <TechLogo name={tech} />
+                        {tech}
+                      </li>
                     ))}
                   </ul>
                 </dd>

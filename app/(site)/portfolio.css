@@ -222,3 +222,6 @@ a.round-arrow:hover,a.round-arrow:focus-visible{color:var(--cyan);border-color:v
 
 
 
+.chips li,.stack-track li{display:inline-flex;align-items:center;gap:.55em}
+.chips li .tech-logo,.stack-track li .tech-logo{flex:none;width:1.15em;height:1.15em}
+.stack-track li .tech-logo{width:1em;height:1em}
