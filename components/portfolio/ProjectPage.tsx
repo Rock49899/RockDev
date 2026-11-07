@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getSiteData } from "@/lib/content";
-import { lines, projectHref, selectVariant, stackItems } from "@/lib/view";
+import { lines, paragraphs, projectHref, selectVariant, stackItems } from "@/lib/view";
 import type { Variant } from "@/lib/types";
 import { Icon } from "./Icon";
 import { TechLogo } from "./TechLogo";
@@ -28,6 +28,7 @@ export default async function ProjectPage({
   const next = view.projects[index + 1];
   const base = variant === "amoa" ? "/amoa" : "";
   const highlights = lines(project.highlights);
+  const [lead, ...story] = paragraphs(project.description);
   const subject = encodeURIComponent(`Projet similaire à ${project.title}`);
 
   return (
@@ -45,13 +46,26 @@ export default async function ProjectPage({
         <header className="detail-head">
           <small>{project.type}</small>
           <h1>{project.title}</h1>
-          <p className="detail-lead">{project.description}</p>
+          <p className="detail-lead">{lead}</p>
+          {project.link_url && (
+            <a className="primary detail-live" href={project.link_url} target="_blank" rel="noopener noreferrer">
+              Voir le projet en ligne <Icon name="external" />
+            </a>
+          )}
         </header>
 
         <ProjectArt project={project} className="detail-art" mode="stage" priority />
 
         <div className="detail-grid">
           <div>
+            {story.length > 0 && (
+              <div className="detail-story">
+                <h2 className="mini">Le projet</h2>
+                {story.map((text) => (
+                  <p key={text}>{text}</p>
+                ))}
+              </div>
+            )}
             {highlights.length > 0 && (
               <>
                 <h2 className="mini">Points clés</h2>
@@ -92,11 +106,6 @@ export default async function ProjectPage({
               </div>
             </dl>
             <div className="detail-cta">
-              {project.link_url && (
-                <a className="primary" href={project.link_url} target="_blank" rel="noopener noreferrer">
-                  Voir le projet en ligne <Icon name="external" />
-                </a>
-              )}
               {project.repo_url && (
                 <a className="ghost github" href={project.repo_url} target="_blank" rel="noopener noreferrer">
                   <Icon name="github" /> Code source sur GitHub

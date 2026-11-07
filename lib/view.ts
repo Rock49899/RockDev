@@ -28,6 +28,13 @@ export const lines = (text: string) =>
     .map((l) => l.trim())
     .filter(Boolean);
 
+/** Paragraphes d'un texte long, séparés par une ligne vide. Le premier sert de résumé. */
+export const paragraphs = (text: string) =>
+  text
+    .split(/\r?\n\s*\r?\n/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
 export const stackItems = (text: string) =>
   text
     .split(/[·,|]/)

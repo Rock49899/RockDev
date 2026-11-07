@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { basePath, projectHref, stackItems } from "@/lib/view";
+import { basePath, paragraphs, projectHref, stackItems } from "@/lib/view";
 import type { Project, SiteView } from "@/lib/types";
 import Carousel from "./Carousel";
 import { Icon } from "./Icon";
@@ -68,7 +68,7 @@ function ProjectCard({ project, index, view }: { project: Project; index: number
             {project.title}
           </Link>
         </h3>
-        <p>{project.description}</p>
+        <p>{paragraphs(project.description)[0]}</p>
         <ul className="chips" aria-label="Technologies">
           {stackItems(project.stack).map((tech) => (
             <li key={tech}>
@@ -79,6 +79,18 @@ function ProjectCard({ project, index, view }: { project: Project; index: number
         </ul>
       </div>
       <div className="project-actions">
+        {project.link_url && (
+          <a
+            className="round-arrow gh"
+            href={project.link_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Ouvrir ${project.title} en ligne`}
+            title="Voir le projet en ligne"
+          >
+            <Icon name="external" />
+          </a>
+        )}
         {project.repo_url && (
           <a
             className="round-arrow gh"

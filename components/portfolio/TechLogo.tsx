@@ -223,6 +223,8 @@ function iconFor(name: string) {
   const key = name
     .toLowerCase()
     .replace(/\(.*?\)/g, "")
+    // « Laravel 12 », « Vue 3 » : le numéro de version ne change pas le logo.
+    .replace(/ +[0-9]+([.][0-9]+)*$/, "")
     .trim();
   return ICONS[key] ?? ICONS[key.split(/\s*\/\s*/)[0]];
 }
