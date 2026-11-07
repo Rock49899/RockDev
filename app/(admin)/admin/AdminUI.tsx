@@ -215,7 +215,8 @@ export function ProjectForm({ project }: { project?: Project }) {
       </div>
       <div className="field">
         <label htmlFor={`desc-${key}`}>Description</label>
-        <textarea id={`desc-${key}`} name="description" rows={3} defaultValue={project?.description ?? ""} />
+        <textarea id={`desc-${key}`} name="description" rows={10} defaultValue={project?.description ?? ""} />
+        <small>Séparez les paragraphes par une ligne vide. Le premier sert de résumé sur la carte du projet.</small>
       </div>
       <div className="field">
         <label htmlFor={`high-${key}`}>Points clés</label>
