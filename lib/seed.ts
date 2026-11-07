@@ -150,7 +150,7 @@ export const seed: SiteData = {
     location_text: "GODOMEY, ABOMEY-CALAVI — BÉNIN",
     portrait_url: "",
     copyright: "© 2026 ROCK RODRIGUE HOUINSOU",
-    footer_note: "DESIGNÉ ET CODÉ AVEC INTENTION",
+    footer_note: "DESIGNÉ ET CODÉ PAR ROCKVIRTUOSO",
     default_theme: "mono", // Signal : rouge · ivoire
   },
   profiles: {
