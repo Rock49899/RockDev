@@ -244,3 +244,6 @@ a.round-arrow:hover,a.round-arrow:focus-visible{color:var(--cyan);border-color:v
 .detail-live svg{width:16px}
 .detail-story{margin-bottom:48px}
 .detail-story p{max-width:680px;margin:0 0 20px;color:#aab2c6;font-size:16px;line-height:1.85}
+
+/* Les captures d'écran gardent leurs vraies couleurs, quel que soit le thème */
+[data-theme] .project-art.has-image{filter:none}
