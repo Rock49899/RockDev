@@ -26,7 +26,9 @@ export function FieldInput({ field, value }: { field: Field; value: unknown }) {
           {field.label}
         </label>
       )}
-      {field.kind === "textarea" && <textarea id={id} name={field.key} rows={3} defaultValue={String(value ?? "")} />}
+      {(field.kind === "textarea" || field.kind === "lines") && (
+        <textarea id={id} name={field.key} rows={field.kind === "lines" ? 2 : 3} defaultValue={String(value ?? "")} />
+      )}
       {field.kind === "theme" && (
         <div className="theme-choices" role="radiogroup" aria-labelledby={`${id}-label`}>
           {THEMES.map((theme) => (

@@ -1,4 +1,4 @@
-export type FieldKind = "text" | "textarea" | "url" | "email" | "bool" | "theme";
+export type FieldKind = "text" | "lines" | "textarea" | "url" | "email" | "bool" | "theme";
 
 export type Field = {
   key: string;
@@ -62,7 +62,7 @@ export const VARIANT_GROUPS: FieldGroup[] = [
     id: "apropos",
     title: "Section À propos",
     fields: [
-      { key: "about_title", label: "Titre", kind: "text" },
+      { key: "about_title", label: "Titre", kind: "lines", hint: RETOURS },
       { key: "about_accent", label: "Fin du titre (en couleur)", kind: "text" },
       { key: "about_p1", label: "Premier paragraphe", kind: "textarea", hint: GRAS },
       { key: "about_p2", label: "Second paragraphe", kind: "textarea", hint: GRAS },
@@ -73,7 +73,7 @@ export const VARIANT_GROUPS: FieldGroup[] = [
     id: "projets",
     title: "Section Projets",
     fields: [
-      { key: "work_title", label: "Titre", kind: "text", hint: RETOURS },
+      { key: "work_title", label: "Titre", kind: "lines", hint: RETOURS },
       { key: "work_accent", label: "Fin du titre (en couleur)", kind: "text" },
       { key: "work_text", label: "Texte d'accompagnement", kind: "textarea" },
     ],
@@ -82,7 +82,7 @@ export const VARIANT_GROUPS: FieldGroup[] = [
     id: "funnels",
     title: "Section Funnels et landing pages",
     fields: [
-      { key: "funnels_title", label: "Titre", kind: "text", hint: "La section n'apparaît que si au moins un projet est de type « Funnel / landing page »." },
+      { key: "funnels_title", label: "Titre", kind: "lines", hint: "La section n'apparaît que si au moins un projet est de type « Funnel / landing page »." },
       { key: "funnels_accent", label: "Fin du titre (en couleur)", kind: "text" },
       { key: "funnels_text", label: "Texte d'accompagnement", kind: "textarea" },
     ],
@@ -91,13 +91,13 @@ export const VARIANT_GROUPS: FieldGroup[] = [
     id: "expertise",
     title: "Section Expertise et qualités",
     fields: [
-      { key: "skills_title", label: "Titre", kind: "text", hint: RETOURS },
+      { key: "skills_title", label: "Titre", kind: "lines", hint: RETOURS },
       { key: "skills_accent", label: "Fin du titre (en couleur)", kind: "text" },
       { key: "skills_text", label: "Texte d'accompagnement", kind: "textarea" },
       { key: "core_top", label: "Médaillon : ligne du haut", kind: "text" },
       { key: "core_main", label: "Médaillon : mot principal", kind: "text" },
       { key: "core_sub", label: "Médaillon : ligne du bas", kind: "text" },
-      { key: "soft_title", label: "Titre des qualités", kind: "text" },
+      { key: "soft_title", label: "Titre des qualités", kind: "lines", hint: RETOURS },
       { key: "soft_accent", label: "Fin du titre des qualités", kind: "text" },
     ],
   },
@@ -105,7 +105,7 @@ export const VARIANT_GROUPS: FieldGroup[] = [
     id: "parcours",
     title: "Section Parcours",
     fields: [
-      { key: "journey_title", label: "Titre", kind: "text" },
+      { key: "journey_title", label: "Titre", kind: "lines", hint: RETOURS },
       { key: "journey_accent", label: "Fin du titre (en couleur)", kind: "text" },
       { key: "journey_text", label: "Texte d'accompagnement", kind: "textarea" },
     ],
@@ -114,7 +114,7 @@ export const VARIANT_GROUPS: FieldGroup[] = [
     id: "contact",
     title: "Section Contact",
     fields: [
-      { key: "contact_title", label: "Titre", kind: "text", hint: RETOURS },
+      { key: "contact_title", label: "Titre", kind: "lines", hint: RETOURS },
       { key: "contact_accent", label: "Fin du titre (en couleur)", kind: "text" },
     ],
   },
