@@ -247,3 +247,6 @@ a.round-arrow:hover,a.round-arrow:focus-visible{color:var(--cyan);border-color:v
 
 /* Les captures d'écran gardent leurs vraies couleurs, quel que soit le thème */
 [data-theme] .project-art.has-image{filter:none}
+
+/* Nombre impair de chiffres : le dernier occupe toute la largeur */
+.metrics article:last-child:nth-child(odd){grid-column:1/-1}

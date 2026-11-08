@@ -7,14 +7,12 @@ import type { Experience, Metric, Project, SiteData, SkillGroup, SoftSkill } fro
  */
 
 const metrics: Omit<Metric, "id">[] = [
-  { variant: "dev", value: "4", label: "projets full-stack", sort: 1 },
-  { variant: "dev", value: "3", label: "frameworks au quotidien", sort: 2 },
-  { variant: "dev", value: "4", label: "bases de données maîtrisées", sort: 3 },
-  { variant: "dev", value: "∞", label: "curiosité", sort: 4 },
+  { variant: "dev", value: "3", label: "frameworks au quotidien", sort: 1 },
+  { variant: "dev", value: "4", label: "bases de données maîtrisées", sort: 2 },
+  { variant: "dev", value: "∞", label: "curiosité", sort: 3 },
   { variant: "amoa", value: "4", label: "projets full-stack", sort: 1 },
-  { variant: "amoa", value: "6+", label: "années d'expérience", sort: 2 },
-  { variant: "amoa", value: "2", label: "métiers : économie et code", sort: 3 },
-  { variant: "amoa", value: "∞", label: "curiosité", sort: 4 },
+  { variant: "amoa", value: "2", label: "métiers : économie et code", sort: 2 },
+  { variant: "amoa", value: "∞", label: "curiosité", sort: 3 },
 ];
 
 const skills: Omit<SkillGroup, "id">[] = [
@@ -35,7 +33,7 @@ const softSkills: Omit<SoftSkill, "id">[] = [
   { variant: "dev", title: "Esprit d'analyse", text: "Je décompose un besoin métier complexe en fonctionnalités claires avant d'écrire la première ligne.", sort: 1 },
   { variant: "dev", title: "Méthode agile", text: "Travail par itérations (Agile / Scrum), avec des livrables réguliers et visibles.", sort: 2 },
   { variant: "dev", title: "Communication", text: "Rédaction de rapports et de documents clairs, lisibles par les équipes comme par les non-techniques.", sort: 3 },
-  { variant: "dev", title: "Autonomie", text: "Formation continue : React Native, modélisation de bases de données, SQL, HTML5 / CSS3.", sort: 4 },
+  { variant: "dev", title: "Autonomie", text: "Je me forme en continu et j'apprends vite les outils dont un projet a besoin.", sort: 4 },
   { variant: "amoa", title: "Rigueur analytique", text: "Analyse de données, suivi-évaluation et conception d'indicateurs économiques.", sort: 1 },
   { variant: "amoa", title: "Rédaction", text: "Rapports, propositions stratégiques et documents de cadrage structurés.", sort: 2 },
   { variant: "amoa", title: "Compréhension métier", text: "Gestion du crédit, analyse de dossiers et finances publiques locales.", sort: 3 },
@@ -119,7 +117,7 @@ const projects: Omit<Project, "id">[] = [
 
 const experiences: Omit<Experience, "id">[] = [
   { kind: "experience", period: "Avr. 2026 — Sept. 2026", title: "Développeur full-stack et chef de projet", org: "WALAB, plateforme de service de laboratoire à domicile", description: "", show_dev: true, show_amoa: true, sort: 1 },
-  { kind: "experience", period: "Janv. 2026 — Avr. 2026", title: "Stage : développeur full-stack", org: "La Pieuvre Technologique", description: "Développement full-stack d'applications web (Laravel, Vue.js, MySQL).", show_dev: true, show_amoa: true, sort: 2 },
+  { kind: "experience", period: "Janv. 2026 — Avr. 2026", title: "Stage : développeur full-stack", org: "La Pieuvre Technologique", description: "Développement full-stack d'applications web.", show_dev: true, show_amoa: true, sort: 2 },
   { kind: "experience", period: "Janv. 2023 — Août 2024", title: "Responsable analyste suivi-évaluation", org: "Cabinet Smart Solutions Bénin", description: "Conception et mise en œuvre de systèmes de suivi-évaluation. Analyse de données, rédaction de rapports, conception d'indicateurs économiques et planification stratégique.", show_dev: false, show_amoa: true, sort: 3 },
   { kind: "experience", period: "Févr. 2021 — Avr. 2022", title: "Assistant suivi des opérations de crédit", org: "Kotchami Okoumansou", description: "Élaboration de plans de gestion des crédits, collecte des fonds, analyse des dossiers de crédit.", show_dev: false, show_amoa: true, sort: 4 },
   { kind: "experience", period: "Janv. — Sept. 2020", title: "Stage : recherche, études et analyse statistique et économique", org: "Cabinet Smart Solutions Bénin", description: "Contribution à des études économiques et analyses statistiques, préparation de rapports et de propositions stratégiques, collecte et dépouillement de données.", show_dev: false, show_amoa: true, sort: 5 },
@@ -155,7 +153,7 @@ export const seed: SiteData = {
     dev: {
       kicker: "DÉVELOPPEUR FULL-STACK · FUNNEL BUILDER",
       intro:
-        "Je conçois, développe et livre des **plateformes web sur mesure** et des **funnels de vente**, du cadrage à la mise en ligne : Laravel, React, Vue.js, systeme.io et Make.",
+        "Je conçois, développe et livre des **plateformes web sur mesure** et des **funnels de vente**, du cadrage à la mise en ligne.",
       available: true,
       availability_text: "Disponible pour de nouvelles missions",
       experience_value: "4",
@@ -164,22 +162,22 @@ export const seed: SiteData = {
       about_title: "DU BESOIN",
       about_accent: "AU PRODUIT LIVRÉ.",
       about_p1:
-        "Développeur full-stack, je construis des **applications web de gestion** : paiement, commandes, stocks, suivi budgétaire. Laravel et Node.js côté serveur, Vue.js et React côté interface.",
+        "Je construis des **applications web de gestion** : paiement, commandes, stocks, suivi budgétaire.",
       about_p2:
         "Je livre un **code structuré (MVC, API REST)** et je reste en contact avec mes clients tout au long du projet.",
       about_cta: "Voir ma stack",
       work_title: "DES PLATEFORMES",
       work_accent: "CONÇUES POUR SERVIR.",
       work_text:
-        "Paiement, commandes, stocks, budget : des plateformes web complètes, de la base de données à l'interface.",
+        "Des plateformes complètes, de la base de données à l'interface.",
       funnels_title: "FUNNELS &",
       funnels_accent: "LANDING PAGES.",
       funnels_text:
-        "Des pages et des tunnels de vente construits pour guider le visiteur jusqu'à l'action, avec systeme.io et des automatisations Make.",
+        "Des pages et des tunnels de vente construits pour guider le visiteur jusqu'à l'action.",
       skills_title: "DU SERVEUR",
       skills_accent: "À L'INTERFACE.",
       skills_text:
-        "Je choisis les outils selon le besoin du projet, jamais l'inverse : back-end, front-end, données et méthodes.",
+        "Je choisis les outils selon le besoin du projet, jamais l'inverse.",
       core_top: "FULL",
       core_main: "STACK",
       core_sub: "DEVELOPER",
@@ -187,7 +185,7 @@ export const seed: SiteData = {
       soft_accent: "DU CODE.",
       journey_title: "PARCOURS",
       journey_accent: "DE DÉVELOPPEUR.",
-      journey_text: "Mes expériences et formations en développement.",
+      journey_text: "",
       contact_title: "UN PROJET\nEN TÊTE ?",
       contact_accent: "PARLONS-EN.",
       cv_url: "",
@@ -195,7 +193,7 @@ export const seed: SiteData = {
     amoa: {
       kicker: "ÉCONOMISTE · DÉVELOPPEUR FULL-STACK",
       intro:
-        "Économiste de formation et développeur full-stack, je conçois des **applications de gestion financière** qui rendent la donnée lisible et les décisions plus sûres.",
+        "Je conçois des **applications de gestion financière** qui rendent la donnée lisible et les décisions plus sûres.",
       available: true,
       availability_text: "Ouvert aux opportunités AMOA & Business Analysis",
       experience_value: "6+",
@@ -204,7 +202,7 @@ export const seed: SiteData = {
       about_title: "ANALYSER,",
       about_accent: "PUIS CONSTRUIRE.",
       about_p1:
-        "Économiste de formation, j'ai commencé par le suivi-évaluation, l'analyse de données et la conception d'indicateurs. Aujourd'hui, je **traduis ces besoins métier en applications web** : gestion financière, paiement, commandes et stocks.",
+        "Économiste de formation, j'ai commencé par le suivi-évaluation, l'analyse de données et la conception d'indicateurs. Aujourd'hui, je **traduis ces besoins métier en applications web**.",
       about_p2:
         "Je prépare une licence MIAGE pour devenir **consultant AMOA** dans la banque et la fintech.",
       about_cta: "Découvrir mon approche",
@@ -214,11 +212,11 @@ export const seed: SiteData = {
         "Une sélection de plateformes où gestion financière, rigueur d'analyse et expérience utilisateur avancent ensemble.",
       funnels_title: "FUNNELS &",
       funnels_accent: "LANDING PAGES.",
-      funnels_text: "Des pages et des tunnels construits avec systeme.io et des automatisations Make.",
+      funnels_text: "Des pages et des tunnels de vente pour guider le visiteur jusqu'à l'action.",
       skills_title: "DE L'ANALYSE",
       skills_accent: "AU CODE.",
       skills_text:
-        "Je choisis les outils selon le besoin métier, jamais l'inverse. Du cadrage fonctionnel à la base de données.",
+        "Je choisis les outils selon le besoin métier, jamais l'inverse.",
       core_top: "FINANCE",
       core_main: "TECH",
       core_sub: "ANALYSE & CODE",
@@ -226,7 +224,7 @@ export const seed: SiteData = {
       soft_accent: "ET MÉTHODE.",
       journey_title: "ÉCONOMISTE",
       journey_accent: "ET DÉVELOPPEUR.",
-      journey_text: "De l'économie et du suivi-évaluation au développement full-stack.",
+      journey_text: "",
       contact_title: "CONSTRUISONS\nQUELQUE CHOSE",
       contact_accent: "D'UTILE.",
       cv_url: "",

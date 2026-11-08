@@ -237,7 +237,7 @@ export default function Sections({ view }: { view: SiteView }) {
         <section id="funnels" className="work funnels section-pad">
           <div className="section-head">
             <div>
-              <div className="section-tag">{tag("FUNNELS & LANDING PAGES")}</div>
+              <div className="section-tag">{tag("FUNNELS")}</div>
               <h2>
                 <Lines text={profile.funnels_title} />
                 <br />
@@ -311,14 +311,14 @@ export default function Sections({ view }: { view: SiteView }) {
         <section id="journey" className="journey section-pad">
           <div className="section-head">
             <div>
-              <div className="section-tag">{tag("PARCOURS")}</div>
+              <div className="section-tag">{tag("EXPÉRIENCES & FORMATION")}</div>
               <h2>
                 <Lines text={profile.journey_title} />
                 <br />
                 <em>{profile.journey_accent}</em>
               </h2>
             </div>
-            <p>{profile.journey_text}</p>
+            {profile.journey_text && <p>{profile.journey_text}</p>}
           </div>
           <div className="timeline">
             {columns.map((column) => (

@@ -66,7 +66,7 @@ export default async function ProjectPage({
                 ))}
               </div>
             )}
-            {highlights.length > 0 && (
+            {highlights.length > 0 && story.length === 0 && (
               <>
                 <h2 className="mini">Points clés</h2>
                 <ul className="highlights">
